@@ -18,7 +18,6 @@ def bloodinfo(name,hospital,bloodgrp,status):
             print("Status : Blood Donated")
         else:
             print("Status : Blood requested")
-# main program
 print("welcome to blood bank")
 os.chdir("C:\\Users\\91787\\OneDrive\\Desktop\\my programs\\python")
 data=open("BloodData.txt",'a+')
@@ -26,8 +25,8 @@ name=[]
 hospital=[]
 bloodgrp=[]
 status=[]#In 0 is for donated and 1 is requested blood 
-print("1) for donatating blood to blood bank ,\n 2) for requesting blood from blood bank,\n 3) for all the data of blood Bankenteries \n 4) enteries of rare blood grp \n 5)Entries of in a perticular hospital \n 6)retiving a perticular data by name of patient \n 7) Exit")
 while(1):
+    print("1) for donatating blood to blood bank ,\n 2) for requesting blood from blood bank,\n 3) for all the data of blood Bankenteries \n 4) enteries of rare blood grp \n 5)Entries of in a perticular hospital \n 6)retiving a perticular data by name of patient \n 7) Exit")
     n=int(input())
     if(n==1):
         donate(name,hospital,bloodgrp,status,data)
@@ -44,7 +43,7 @@ while(1):
                 else:
                     print("Status : Blood requested")
     elif(n==5):
-        h=input("Enter the name of Hospital")
+        h=input("Enter the name of Hospital :")
         for i in range(len(name)):
             if(hospital[i]==h):
                 print("\n ---------------- \n "+"name of patient :"+str(name[i])+"\n Hospital Name :"+str(hospital[i])+"\n Blood group :"+str(bloodgrp[i]))
@@ -52,8 +51,10 @@ while(1):
                     print("Status : Blood Donated")
                 else:
                     print("Status : Blood requested")
+            else:
+                print("there is no such hospital")
     elif(n==6):
-        p=input("Enter the name of patient")
+        p=input("Enter the name of patient :")
         for i in range(len(name)):
             if(name[i]==h):
                 print("name of patient :"+str(name[i])+"\n Hospital Name :"+str(hospital[i])+"\n Blood group :"+str(bloodgrp[i]))
@@ -61,6 +62,7 @@ while(1):
                     print("Status : Blood Donated")
                 else:
                     print("Status : Blood requested")
+            else:
+                print("Name not in list")
     else:
         break
-        
